@@ -9,7 +9,9 @@ public class Controller : MonoBehaviour
     [SerializeField] int speed;
 
     [Header("Arduino")]
-    SerialPort stream = new SerialPort("COM8", 115200);
+    //SerialPort stream = new SerialPort("COM8", 115200);
+    public string namePort;
+    SerialPort stream;
     public string strReceived;
 
     public string[] strData = new string[4];
@@ -25,6 +27,7 @@ public class Controller : MonoBehaviour
 
     void Start()
     {
+        stream = new SerialPort(namePort, 115200);
         stream.Open();
         rigidBody = this.gameObject.GetComponent<Rigidbody>();
         spawnPoint = this.gameObject.transform;
@@ -34,7 +37,7 @@ public class Controller : MonoBehaviour
     {
         GetArduinoData();
         playerMovement.x = arX;
-        playerMovement.z = arZ;
+        playerMovement.z = arY;
         //  playerMovement = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
         Move();
     }
