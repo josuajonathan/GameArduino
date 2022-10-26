@@ -20,10 +20,14 @@ public class Controller : MonoBehaviour
     private Rigidbody rigidBody;
     private Vector3 playerMovement;
 
+    [Header("Player")]
+    private Transform spawnPoint;
+
     void Start()
     {
         stream.Open();
         rigidBody = this.gameObject.GetComponent<Rigidbody>();
+        spawnPoint = this.gameObject.transform;
     }
 
     void Update()
@@ -77,4 +81,10 @@ public class Controller : MonoBehaviour
         rigid.AddForce(tilt);
         Debug.DrawRay(transform.position + Vector3.up, tilt, Color.cyan);
     }*/
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Maze")
+            transform.position = spawnPoint.position;
+    }
 }
