@@ -23,14 +23,14 @@ public class Controller : MonoBehaviour
     private Vector3 playerMovement;
 
     [Header("Player")]
-    private Transform spawnPoint;
+    [SerializeField] private Vector3 spawnPoint;
 
     void Start()
     {
         stream = new SerialPort(namePort, 115200);
         stream.Open();
         rigidBody = this.gameObject.GetComponent<Rigidbody>();
-        spawnPoint = this.gameObject.transform;
+        spawnPoint = this.gameObject.transform.position;
     }
 
     void Update()
@@ -88,6 +88,9 @@ public class Controller : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Maze")
-            transform.position = spawnPoint.position;
+        {
+            Debug.Log("Hit Maze");
+            this.gameObject.transform.position = spawnPoint;
+        }   
     }
 }
