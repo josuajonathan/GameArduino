@@ -95,7 +95,7 @@ public class Controller : MonoBehaviour
 
         if (collision.gameObject.tag == "GameOver")
         {
-            GameManager.Instance.WinHandle();
+            GameManager.Instance.HandleWin();
         }
     }
 }

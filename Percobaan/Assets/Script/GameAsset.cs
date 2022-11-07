@@ -53,7 +53,14 @@ public class GameAsset : MonoBehaviour
 
         switch (_type)
         {
-            case SoundType.MAINMENU:
+            case SoundType.Lose:
+                foreach (Sound value in m_SoundList)
+                {
+                    if (value.type == _type) returnValue = value.sound;
+                }
+                break;
+
+            case SoundType.Win:
                 foreach (Sound value in m_SoundList)
                 {
                     if (value.type == _type) returnValue = value.sound;

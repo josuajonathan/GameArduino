@@ -40,9 +40,9 @@ public class GameUI : MonoBehaviour
 
     [Header("UI Component")]
     [SerializeField] private Canvas mainCanvas;
-    [SerializeField] private GameObject pauseButton;
     [SerializeField] private GameObject losePanel;
     [SerializeField] private GameObject winPanel;
+    [SerializeField] private GameObject pausePanel;
 
     private void Start()
     {
@@ -51,35 +51,54 @@ public class GameUI : MonoBehaviour
         mainCanvas.sortingLayerName = "Default";
         mainCanvas.sortingOrder = 2;
 
-        pauseButton.SetActive(false);
         losePanel.SetActive(false);
         winPanel.SetActive(false);
+        pausePanel.SetActive(false);
+    }
+
+    private void Update()
+    {
+        EscapeBack();
+    }
+
+    public void EscapeBack()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Back();
+        }
     }
 
     public void Pause()
     {
-        pauseButton.SetActive(false);
+        SoundManager.Instance.PlaySound(SoundType.Button);
+        GameManager.Instance.HandlePause();
+        pausePanel.SetActive(true);
         losePanel.SetActive(false);
         winPanel.SetActive(false);
     }
 
     public void Back()
     {
-        pauseButton.SetActive(true);
+        SoundManager.Instance.PlaySound(SoundType.Button);
+        GameManager.Instance.HandlePlay();
+        pausePanel.SetActive(false);
         losePanel.SetActive(false);
         winPanel.SetActive(false);
     }
 
     public void Win()
     {
-        pauseButton.SetActive(false);
+        SoundManager.Instance.PlaySound(SoundType.Win);
+        pausePanel.SetActive(false);
         losePanel.SetActive(false);
         winPanel.SetActive(true);
     }
 
     public void Lose()
     {
-        pauseButton.SetActive(false);
+        SoundManager.Instance.PlaySound(SoundType.Lose);
+        pausePanel.SetActive(false);
         losePanel.SetActive(true);
         winPanel.SetActive(false);
     }

@@ -45,14 +45,16 @@ public class SoundManager : MonoBehaviour
     {
         switch (_type)
         {
+            case SoundType.Lose:
+                audioPlay.PlayOneShot(GameAsset.Instance.GetSound(_type));
+                break;
+
             case SoundType.Button:
                 audioPlay.PlayOneShot(GameAsset.Instance.GetSound(_type));
                 break;
 
-            case SoundType.MAINMENU:
-                audioPlay.loop = true;
-                audioPlay.clip = GameAsset.Instance.GetSound(_type);
-                audioPlay.Play();
+            case SoundType.Win:
+                audioPlay.PlayOneShot(GameAsset.Instance.GetSound(_type));
                 break;
 
             case SoundType.BACKSOUND:

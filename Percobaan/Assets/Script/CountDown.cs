@@ -14,7 +14,7 @@ public class CountDown : MonoBehaviour
     }
     #endregion singleton
 
-    [SerializeField] private TMP_Text countDown;
+    [SerializeField] private TMP_Text m_CountDown;
     [SerializeField] private int m_Time;
     private int time;
     private int m_Minute, m_Second;
@@ -55,15 +55,15 @@ public class CountDown : MonoBehaviour
     {
         if (m_Minute < 10 && m_Second < 10)
         {
-            countDown.text = "Time: 0" + m_Minute + ":0" + m_Second;
+            m_CountDown.text = "Time: 0" + m_Minute + ":0" + m_Second;
         }
         else if (m_Minute < 10 && m_Second >= 10)
         {
-            countDown.text = "Time: 0" + m_Minute + ":" + m_Second;
+            m_CountDown.text = "Time: 0" + m_Minute + ":" + m_Second;
         }
         else if (m_Minute >= 10 && m_Second < 10)
         {
-            countDown.text = "Time: 0" + m_Minute + ":0" + m_Second;
+            m_CountDown.text = "Time: 0" + m_Minute + ":0" + m_Second;
         }
     }
 

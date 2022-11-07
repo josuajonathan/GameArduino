@@ -53,18 +53,18 @@ public class GameManager : MonoBehaviour
         if (CountDown.Instance.Time <= 0)
         {
             HandlePause();
-            LoseHandle();
+            HandleLose();
         }
     }
 
-    public void WinHandle()
+    public void HandleWin()
     {
         HandlePause();
         CountDown.Instance.StopTimer();
         GameUI.Instance.Win();
     }
 
-    public void LoseHandle()
+    public void HandleLose()
     {
         HandlePause();
         CountDown.Instance.StopTimer();

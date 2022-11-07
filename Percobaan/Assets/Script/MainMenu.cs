@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MainMenu : MonoBehaviour
+public class MainMenu : HighLightUI
 {
     #region singleton
     public static MainMenu instance;
@@ -49,6 +49,8 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1f;
+        SoundManager.Instance.PlaySound(SoundType.BACKSOUND);
         mainPanel.SetActive(true);
         optionPanel.SetActive(false);
         creditPanel.SetActive(false);
@@ -57,22 +59,6 @@ public class MainMenu : MonoBehaviour
     private void Update()
     {
         EscapeBack();
-    }
-
-    public Color HighLightButton(Image _color)
-    {
-        Color image = _color.color;
-        image.a = 255;
-
-        return image;
-    }
-
-    public Color UnHighLightButton(Image _color)
-    {
-        Color image = _color.color;
-        image.a = 0;
-
-        return image;
     }
 
     public void EscapeBack()
@@ -85,11 +71,13 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
+        SoundManager.Instance.PlaySound(SoundType.Button);
         SceneHandler.Instance.NextScene();
     }
 
     public void Back()
     {
+        SoundManager.Instance.PlaySound(SoundType.Button);
         mainPanel.SetActive(true);
         optionPanel.SetActive(false);
         creditPanel.SetActive(false);
@@ -97,6 +85,7 @@ public class MainMenu : MonoBehaviour
 
     public void Credit()
     {
+        SoundManager.Instance.PlaySound(SoundType.Button);
         creditPanel.SetActive(true);
         mainPanel.SetActive(false);
         optionPanel.SetActive(false);
@@ -104,6 +93,7 @@ public class MainMenu : MonoBehaviour
 
     public void Option()
     {
+        SoundManager.Instance.PlaySound(SoundType.Button);
         mainPanel.SetActive(false);
         optionPanel.SetActive(true);
         creditPanel.SetActive(false);
@@ -111,6 +101,7 @@ public class MainMenu : MonoBehaviour
 
     public void Quit()
     {
+        SoundManager.Instance.PlaySound(SoundType.Button);
         Application.Quit();
     }
 
