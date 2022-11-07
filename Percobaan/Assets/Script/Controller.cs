@@ -87,10 +87,15 @@ public class Controller : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Maze")
+        //if (collision.gameObject.tag == "Maze")
+        //{
+        //    Debug.Log("Hit Maze");
+        //    this.gameObject.transform.position = spawnPoint;
+        //}
+
+        if (collision.gameObject.tag == "GameOver")
         {
-            Debug.Log("Hit Maze");
-            this.gameObject.transform.position = spawnPoint;
-        }   
+            GameManager.Instance.WinHandle();
+        }
     }
 }

@@ -68,6 +68,7 @@
     <Compile Include="Assets\Script\CountDown.cs" />
     <Compile Include="Assets\Script\EnumContainer.cs" />
     <Compile Include="Assets\Script\GameAsset.cs" />
+    <Compile Include="Assets\Script\GameManager.cs" />
     <Compile Include="Assets\Script\GameUI.cs" />
     <Compile Include="Assets\Script\MainMenu.cs" />
     <Compile Include="Assets\Script\SceneHandler.cs" />
@@ -689,14 +690,14 @@
     <Reference Include="Unity.Rider.Editor">
       <HintPath>D:/Kuliah/Semester 5/Praktikum Piranti Interaksi/GameArduino/Percobaan/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>D:/Kuliah/Semester 5/Praktikum Piranti Interaksi/GameArduino/Percobaan/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>D:/Kuliah/Semester 5/Praktikum Piranti Interaksi/GameArduino/Percobaan/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>D:/Kuliah/Semester 5/Praktikum Piranti Interaksi/GameArduino/Percobaan/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>D:/Kuliah/Semester 5/Praktikum Piranti Interaksi/GameArduino/Percobaan/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup></ItemGroup>

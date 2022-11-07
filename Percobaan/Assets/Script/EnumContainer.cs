@@ -1,5 +1,5 @@
 ﻿public enum SoundType
 {
     MAINMENU, BACKSOUND,
-    button,
+    Button, Hit
 }

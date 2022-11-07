@@ -45,7 +45,7 @@ public class SoundManager : MonoBehaviour
     {
         switch (_type)
         {
-            case SoundType.button:
+            case SoundType.Button:
                 audioPlay.PlayOneShot(GameAsset.Instance.GetSound(_type));
                 break;
 

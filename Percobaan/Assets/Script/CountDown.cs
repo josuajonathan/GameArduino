@@ -40,11 +40,6 @@ public class CountDown : MonoBehaviour
         {
             StartCoroutine(TimeLeft());
         }
-        else
-        if (m_Time < 0)
-        {
-            // lose
-        }
     }
 
     public void UpdateTimer()
@@ -82,9 +77,14 @@ public class CountDown : MonoBehaviour
         timerRun = true;
     }
 
-    public void UseTimer(bool _timerStop)
+    public void StopTimer()
     {
-        this.timerStop = _timerStop;
+        this.timerStop = true;
+    }
+
+    public void StartTimer()
+    {
+        this.timerStop = false;
     }
 
     public void ResetCountdown()

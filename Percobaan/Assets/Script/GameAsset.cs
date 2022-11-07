@@ -67,7 +67,7 @@ public class GameAsset : MonoBehaviour
                 }
                 break;
 
-            case SoundType.button:
+            case SoundType.Button:
                 foreach (Sound value in m_SoundList)
                 {
                     if (value.type == _type) returnValue = value.sound;
