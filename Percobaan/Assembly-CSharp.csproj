@@ -66,7 +66,12 @@
   <ItemGroup>
     <Compile Include="Assets\Script\Controller.cs" />
     <Compile Include="Assets\Script\CountDown.cs" />
+    <Compile Include="Assets\Script\EnumContainer.cs" />
+    <Compile Include="Assets\Script\GameAsset.cs" />
     <Compile Include="Assets\Script\GameUI.cs" />
+    <Compile Include="Assets\Script\MainMenu.cs" />
+    <Compile Include="Assets\Script\SceneHandler.cs" />
+    <Compile Include="Assets\Script\SoundManager.cs" />
     <Compile Include="Assets\Script\serialTest.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
@@ -689,6 +694,9 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>D:/Kuliah/Semester 5/Praktikum Piranti Interaksi/GameArduino/Percobaan/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>D:/Kuliah/Semester 5/Praktikum Piranti Interaksi/GameArduino/Percobaan/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup></ItemGroup>
