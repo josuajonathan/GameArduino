@@ -46,11 +46,6 @@ public class GameUI : MonoBehaviour
 
     private void Start()
     {
-        mainCanvas = this.gameObject.GetComponentInChildren<Canvas>();
-        mainCanvas.worldCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
-        mainCanvas.sortingLayerName = "Default";
-        mainCanvas.sortingOrder = 2;
-
         losePanel.SetActive(false);
         winPanel.SetActive(false);
         pausePanel.SetActive(false);

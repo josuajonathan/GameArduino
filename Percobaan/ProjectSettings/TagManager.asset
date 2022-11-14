@@ -49,6 +49,9 @@ TagManager:
   - name: Player
     uniqueID: 300463293
     locked: 0
+  - name: Maze
+    uniqueID: 3970645097
+    locked: 0
   - name: Background
     uniqueID: 205521699
     locked: 0

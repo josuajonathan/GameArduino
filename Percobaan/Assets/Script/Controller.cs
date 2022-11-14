@@ -27,7 +27,7 @@ public class Controller : MonoBehaviour
 
     void Start()
     {
-        stream = new SerialPort(namePort, 115200);
+        stream = new SerialPort("COM3", 115200);
         stream.Open();
         rigidBody = this.gameObject.GetComponent<Rigidbody>();
         spawnPoint = this.gameObject.transform.position;
